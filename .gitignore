@@ -31,3 +31,19 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Java / Spring Boot ###
+target/
+*.jar
+*.war
+*.log
+.env
+
+### IDE ###
+.vscode/
+.idea/
+*.iml
+
+### Git ###
+application.properties
+application.yml

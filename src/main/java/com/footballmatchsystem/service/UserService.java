@@ -16,8 +16,17 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
     public boolean validateUser(String username, String password) {
         Optional<User> user = userRepository.findByUsername(username);
         return user.isPresent() && user.get().getPassword().equals(password);
+    }
+
+    public User registerUser(String username, String email, String password) {
+        User user = new User(username, email, password);
+        return userRepository.save(user);
     }
 }
